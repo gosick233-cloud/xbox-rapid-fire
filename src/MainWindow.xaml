@@ -1,0 +1,211 @@
+<Window x:Class="XboxRapidFire.MainWindow"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ xmlns:local="clr-namespace:XboxRapidFire"
+ Title="{DynamicResource L000}" Width="1110" Height="880" MinWidth="1000" MinHeight="850"
+ WindowStartupLocation="CenterScreen" Background="#101315" Foreground="#EDF2EF"
+ FontFamily="Segoe UI Variable Text, Microsoft YaHei UI" FontSize="14"
+ UseLayoutRounding="True" SnapsToDevicePixels="True">
+ <Window.Resources>
+  <SolidColorBrush x:Key="Surface" Color="#191E20"/>
+  <SolidColorBrush x:Key="Line" Color="#30383A"/>
+  <SolidColorBrush x:Key="Muted" Color="#A4B0AD"/>
+  <SolidColorBrush x:Key="Accent" Color="#A5EB83"/>
+  <Style TargetType="TextBlock"><Setter Property="TextOptions.TextFormattingMode" Value="Display"/></Style>
+  <Style x:Key="Btn" TargetType="Button">
+   <Setter Property="Foreground" Value="#E7EEEA"/><Setter Property="Background" Value="#252D2F"/>
+   <Setter Property="BorderBrush" Value="#3A4545"/><Setter Property="BorderThickness" Value="1"/>
+   <Setter Property="Padding" Value="18,12"/><Setter Property="Cursor" Value="Hand"/>
+   <Setter Property="MinHeight" Value="44"/><Setter Property="FontSize" Value="14"/>
+   <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button">
+    <Border x:Name="Frame" CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}">
+     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Border>
+    <ControlTemplate.Triggers>
+     <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Frame" Property="Opacity" Value="0.82"/></Trigger>
+     <Trigger Property="IsPressed" Value="True"><Setter TargetName="Frame" Property="Opacity" Value="0.65"/></Trigger>
+     <Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="Frame" Property="BorderBrush" Value="#A5EB83"/><Setter TargetName="Frame" Property="BorderThickness" Value="2"/></Trigger>
+     <Trigger Property="IsEnabled" Value="False"><Setter TargetName="Frame" Property="Opacity" Value="0.38"/></Trigger>
+    </ControlTemplate.Triggers>
+   </ControlTemplate></Setter.Value></Setter>
+  </Style>
+  <Style x:Key="SwitchFocus" TargetType="Control">
+   <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Control">
+    <Border Width="58" Height="34" HorizontalAlignment="Center" VerticalAlignment="Center"
+     CornerRadius="17" BorderBrush="#8AA77E" BorderThickness="1"/>
+   </ControlTemplate></Setter.Value></Setter>
+  </Style>
+  <Style x:Key="ModeFocus" TargetType="Control">
+   <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Control">
+    <Border CornerRadius="13" BorderBrush="#8AA77E" BorderThickness="1" Margin="-3"/>
+   </ControlTemplate></Setter.Value></Setter>
+  </Style>
+  <Style x:Key="ModeBtn" TargetType="Button" BasedOn="{StaticResource Btn}">
+   <Setter Property="FocusVisualStyle" Value="{StaticResource ModeFocus}"/>
+   <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button">
+    <Border x:Name="Frame" CornerRadius="10" Background="{TemplateBinding Background}"
+     BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" Padding="{TemplateBinding Padding}">
+     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Border>
+    <ControlTemplate.Triggers>
+     <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Frame" Property="Opacity" Value="0.85"/></Trigger>
+     <Trigger Property="IsPressed" Value="True"><Setter TargetName="Frame" Property="Opacity" Value="0.65"/></Trigger>
+     <Trigger Property="IsEnabled" Value="False"><Setter TargetName="Frame" Property="Opacity" Value="0.45"/></Trigger>
+    </ControlTemplate.Triggers>
+   </ControlTemplate></Setter.Value></Setter>
+  </Style>
+  <Style x:Key="Switch" TargetType="local:PulseSwitch">
+   <Setter Property="Cursor" Value="Hand"/><Setter Property="Width" Value="52"/><Setter Property="Height" Value="44"/>
+   <Setter Property="FocusVisualStyle" Value="{StaticResource SwitchFocus}"/>
+   <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="local:PulseSwitch">
+    <Grid Background="Transparent">
+     <Grid Height="28" VerticalAlignment="Center">
+      <Border x:Name="PART_Track" CornerRadius="14" Background="#404C4B"/>
+      <Ellipse x:Name="PART_Thumb" Width="20" Height="20" Fill="#DCE5DF"
+       HorizontalAlignment="Left" VerticalAlignment="Center" Margin="4,0,0,0">
+       <Ellipse.RenderTransform><TranslateTransform/></Ellipse.RenderTransform>
+      </Ellipse>
+     </Grid>
+    </Grid>
+    <ControlTemplate.Triggers>
+     <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="PART_Track" Property="Opacity" Value="0.9"/></Trigger>
+     <Trigger Property="IsEnabled" Value="False"><Setter Property="Opacity" Value="0.45"/></Trigger>
+    </ControlTemplate.Triggers>
+   </ControlTemplate></Setter.Value></Setter>
+  </Style>
+  <Style x:Key="Input" TargetType="TextBox">
+   <Setter Property="Foreground" Value="#F0F4F1"/><Setter Property="Background" Value="#111718"/>
+   <Setter Property="CaretBrush" Value="#A5EB83"/><Setter Property="BorderBrush" Value="#3A4545"/>
+   <Setter Property="BorderThickness" Value="1"/><Setter Property="FontSize" Value="22"/><Setter Property="FontWeight" Value="SemiBold"/>
+   <Setter Property="VerticalContentAlignment" Value="Center"/><Setter Property="HorizontalContentAlignment" Value="Center"/>
+   <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="TextBox">
+    <Border x:Name="InputFrame" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="8">
+     <ScrollViewer x:Name="PART_ContentHost" Padding="8,3"/>
+    </Border>
+    <ControlTemplate.Triggers><Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="InputFrame" Property="BorderBrush" Value="#A5EB83"/></Trigger>
+     <Trigger Property="Validation.HasError" Value="True"><Setter TargetName="InputFrame" Property="BorderBrush" Value="#FFAE8D"/></Trigger>
+    </ControlTemplate.Triggers>
+   </ControlTemplate></Setter.Value></Setter>
+  </Style>
+ </Window.Resources>
+ <Grid x:Name="Root" Background="#101315" TextOptions.TextRenderingMode="Grayscale">
+  <Grid.ColumnDefinitions><ColumnDefinition Width="286"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+  <Border Background="#151A1B" BorderBrush="#283130" BorderThickness="0,0,1,0">
+   <Grid Margin="26,28,26,24">
+    <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+    <StackPanel>
+     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+      <Border Background="#A5EB83" CornerRadius="10" Width="36" Height="36" Margin="0,0,12,0">
+       <Path Data="M 17 2 L 7 14 L 14 14 L 10 25 L 23 10 L 16 10 Z" Fill="#173018" Width="20" Height="23" Stretch="Uniform"/>
+      </Border>
+      <StackPanel VerticalAlignment="Center"><TextBlock Text="PULSE" FontSize="21" FontWeight="Bold"/><TextBlock Text="{DynamicResource L001}" FontSize="10" Foreground="{StaticResource Muted}" Margin="1,1,0,0"/></StackPanel>
+     </StackPanel>
+     <Border Background="#202927" BorderBrush="#38463F" BorderThickness="1" CornerRadius="18" Margin="0,32,0,0" Padding="13,20,13,16">
+      <StackPanel>
+       <Viewbox Height="136" Margin="0,0,0,15">
+        <Canvas Width="250" Height="170">
+         <Path Data="M 61,28 C 26,23 22,53 12,110 C 4,158 28,164 51,133 L 74,106 L 176,106 L 199,133 C 222,164 246,158 238,110 C 228,53 224,23 189,28 C 151,40 99,40 61,28 Z" Fill="#303B37" Stroke="#526258" StrokeThickness="2"/>
+         <Path Data="M 37,32 L 73,26 M 177,26 L 213,32" Stroke="#80917E" StrokeThickness="7" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+         <Ellipse Canvas.Left="50" Canvas.Top="50" Width="36" Height="36" Fill="#18231D" Stroke="#6F7E72" StrokeThickness="3"/>
+         <Ellipse Canvas.Left="141" Canvas.Top="88" Width="36" Height="36" Fill="#18231D" Stroke="#6F7E72" StrokeThickness="3"/>
+         <Path Data="M 92,88 L 92,99 L 81,99 L 81,111 L 92,111 L 92,122 L 104,122 L 104,111 L 115,111 L 115,99 L 104,99 L 104,88 Z" Fill="#17211C" Stroke="#6F7E72" StrokeThickness="1.5"/>
+         <Ellipse Canvas.Left="117" Canvas.Top="43" Width="16" Height="16" Fill="#9CC988"/>
+         <Ellipse x:Name="PreviewY" Canvas.Left="188" Canvas.Top="46" Width="18" Height="18" Fill="#D6BE72"/>
+         <Ellipse x:Name="PreviewX" Canvas.Left="168" Canvas.Top="66" Width="18" Height="18" Fill="#7CAAD2"/>
+         <Ellipse x:Name="PreviewB" Canvas.Left="208" Canvas.Top="66" Width="18" Height="18" Fill="#D68F83"/>
+         <Ellipse x:Name="PreviewA" Canvas.Left="188" Canvas.Top="86" Width="18" Height="18" Fill="#A5EB83"/>
+         <TextBlock Text="Y" Canvas.Left="193" Canvas.Top="47" FontSize="11" Foreground="#1B241F" FontWeight="Bold"/>
+         <TextBlock Text="X" Canvas.Left="173" Canvas.Top="67" FontSize="11" Foreground="#1B241F" FontWeight="Bold"/>
+         <TextBlock Text="B" Canvas.Left="213" Canvas.Top="67" FontSize="11" Foreground="#1B241F" FontWeight="Bold"/>
+         <TextBlock Text="A" Canvas.Left="193" Canvas.Top="87" FontSize="11" Foreground="#1B241F" FontWeight="Bold"/>
+         <Path Data="M 109,76 L 116,76 M 134,76 L 141,76" Stroke="#84938A" StrokeThickness="4" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+        </Canvas>
+       </Viewbox>
+       <TextBlock Text="Xbox Controller" FontSize="17" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+       <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,9,0,0"><Ellipse x:Name="ConnectionDot" Width="6" Height="6" Fill="#A5EB83" Margin="0,0,7,0"/><TextBlock x:Name="ConnectionText" Text="{DynamicResource L002}" FontSize="12" Foreground="#B6C6BC"/></StackPanel>
+      </StackPanel>
+     </Border>
+    </StackPanel>
+    <StackPanel Grid.Row="1" Margin="0,27,0,0">
+     <TextBlock Text="{DynamicResource L003}" Foreground="{StaticResource Muted}" FontSize="12"/>
+     <StackPanel Orientation="Horizontal" Margin="0,8,0,0"><TextBlock x:Name="EnabledCount" Text="0" FontSize="38" FontWeight="SemiBold"/><TextBlock Text="{DynamicResource L004}" FontSize="13" Foreground="{StaticResource Muted}" VerticalAlignment="Bottom" Margin="5,0,0,9"/></StackPanel>
+     <Border Height="1" Background="#303B37" Margin="0,18,0,18"/>
+     <TextBlock Text="{DynamicResource L005}" FontSize="14" FontWeight="SemiBold"/>
+     <TextBlock Text="{DynamicResource L121}" FontSize="12" Foreground="{StaticResource Muted}" LineHeight="21" Margin="0,9,0,0"/>
+    </StackPanel>
+    <StackPanel Grid.Row="3" VerticalAlignment="Bottom" Margin="0,0,0,12">
+     <TextBlock Text="语言 / Language" Foreground="{StaticResource Muted}" FontSize="12" Margin="0,0,0,8"/>
+     <Grid>
+      <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="8"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+      <Button x:Name="ChineseButton" Content="中文" Tag="zh" Click="LanguageClick" Style="{StaticResource ModeBtn}" Padding="8,0" Height="44" AutomationProperties.Name="中文"/>
+      <Button x:Name="EnglishButton" Grid.Column="2" Content="English" Tag="en" Click="LanguageClick" Style="{StaticResource ModeBtn}" Padding="8,0" Height="44" AutomationProperties.Name="English"/>
+     </Grid>
+    </StackPanel>
+    <Border Grid.Row="4" Background="#1C2422" BorderBrush="#34403B" BorderThickness="1" CornerRadius="12" Padding="15">
+     <StackPanel>
+      <TextBlock Text="{DynamicResource L006}" FontSize="13" FontWeight="SemiBold"/>
+      <TextBlock x:Name="BusText" Text="{DynamicResource L007}" FontSize="12" Foreground="{StaticResource Muted}" Margin="0,12,0,0"/>
+      <TextBlock x:Name="HideText" Text="{DynamicResource L008}" FontSize="12" Foreground="{StaticResource Muted}" Margin="0,6,0,0"/>
+      <Button x:Name="InstallButton" Content="{DynamicResource L009}" Click="InstallClick" Style="{StaticResource Btn}" FontSize="12" Margin="0,16,0,0" Padding="10,8"/>
+     </StackPanel>
+    </Border>
+   </Grid>
+  </Border>
+  <Grid Grid.Column="1" Margin="30,26,30,24">
+   <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+   <Grid Margin="0,0,0,20">
+    <StackPanel><TextBlock Text="{DynamicResource L010}" FontSize="29" FontWeight="SemiBold"/><TextBlock Text="{DynamicResource L011}" Foreground="{StaticResource Muted}" Margin="0,8,0,0" FontSize="13"/></StackPanel>
+    <Border HorizontalAlignment="Right" VerticalAlignment="Top" Background="#222C25" CornerRadius="8" Padding="12,7" Margin="0,5,0,0"><TextBlock x:Name="StatusBadge" Text="{DynamicResource L012}" Foreground="#BCD6B0" FontSize="12"/></Border>
+   </Grid>
+   <ItemsControl x:Name="ButtonCards" Grid.Row="1" ItemsSource="{Binding Buttons}" HorizontalContentAlignment="Stretch">
+    <ItemsControl.ItemsPanel><ItemsPanelTemplate><UniformGrid Columns="2" Rows="4"/></ItemsPanelTemplate></ItemsControl.ItemsPanel>
+    <ItemsControl.ItemTemplate><DataTemplate>
+     <Border x:Name="Card" Margin="0,0,12,12" Padding="16,10,16,10" Background="#191F20" BorderBrush="#303A38" BorderThickness="1" CornerRadius="14">
+      <Grid>
+       <Grid.RowDefinitions><RowDefinition Height="44"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+       <Grid>
+        <Grid.ColumnDefinitions><ColumnDefinition Width="42"/><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+        <Border Background="{Binding BadgeBackground}" Width="34" Height="34" CornerRadius="10" HorizontalAlignment="Left"><TextBlock Text="{Binding Id}" Foreground="{Binding BadgeForeground}" FontWeight="Bold" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/></Border>
+        <StackPanel Grid.Column="1" VerticalAlignment="Center"><TextBlock Text="{Binding Name}" FontWeight="SemiBold"/><TextBlock Text="{Binding State}" Foreground="{Binding StateBrush}" FontSize="11" Margin="0,3,0,0"/></StackPanel>
+        <Button x:Name="ModeButton" Grid.Column="2" Content="{Binding ModeText}" Click="ModeClick" Tag="{Binding}"
+         Style="{StaticResource ModeBtn}" Width="76" Height="44" Padding="4,0" FontSize="11" Margin="4,0,8,0"
+         AutomationProperties.Name="{Binding AccessibleMode}" ToolTip="{Binding ModeHint}"/>
+        <local:PulseSwitch Grid.Column="3" Style="{StaticResource Switch}" IsChecked="{Binding Enabled}" AutomationProperties.Name="{Binding AccessibleToggle}" ToolTip="{Binding ToggleHint}"/>
+       </Grid>
+       <Grid Grid.Row="1" Margin="0,8,0,0" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions><ColumnDefinition Width="34"/><ColumnDefinition Width="*"/><ColumnDefinition Width="34"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+        <Button Content="−" Click="MinusClick" Tag="{Binding}" Style="{StaticResource Btn}" Padding="0" MinHeight="36" Height="36" FontSize="20" AutomationProperties.Name="{Binding AccessibleMinus}"/>
+        <TextBox Grid.Column="1" Text="{Binding IntervalText, UpdateSourceTrigger=LostFocus}" Style="{StaticResource Input}" Height="36" Margin="6,0" MaxLength="4" AutomationProperties.Name="{Binding AccessibleInterval}" ToolTip="{DynamicResource L013}" KeyDown="IntervalKeyDown"/>
+        <Button Grid.Column="2" Content="+" Click="PlusClick" Tag="{Binding}" Style="{StaticResource Btn}" Padding="0" MinHeight="36" Height="36" FontSize="18" AutomationProperties.Name="{Binding AccessiblePlus}"/>
+        <StackPanel Grid.Column="3" VerticalAlignment="Center" Margin="10,0,0,0" MinWidth="70"><TextBlock Text="ms" Foreground="#DEE6E1" FontSize="12"/><TextBlock Text="{Binding RateText}" Foreground="{StaticResource Muted}" FontSize="10" Margin="0,3,0,0"/></StackPanel>
+       </Grid>
+      </Grid>
+     </Border>
+     <DataTemplate.Triggers>
+      <DataTrigger Binding="{Binding Enabled}" Value="True"><Setter TargetName="Card" Property="BorderBrush" Value="#638255"/><Setter TargetName="Card" Property="Background" Value="#202921"/></DataTrigger>
+      <DataTrigger Binding="{Binding ToggleMode}" Value="True"><Setter TargetName="ModeButton" Property="Background" Value="#29392A"/><Setter TargetName="ModeButton" Property="Foreground" Value="#BDEBA6"/><Setter TargetName="ModeButton" Property="BorderBrush" Value="#4D6545"/></DataTrigger>
+     </DataTemplate.Triggers>
+    </DataTemplate></ItemsControl.ItemTemplate>
+   </ItemsControl>
+   <Grid Grid.Row="2" Margin="0,1,12,16">
+    <TextBlock Text="{DynamicResource L014}" Foreground="{StaticResource Muted}" FontSize="11"/>
+    <TextBlock Text="{DynamicResource L015}" HorizontalAlignment="Right" Foreground="{StaticResource Muted}" FontSize="11"/>
+   </Grid>
+   <Border Grid.Row="3" Background="#1B2222" BorderBrush="#35403C" BorderThickness="1" CornerRadius="12" Padding="16,12" Margin="0,0,12,16">
+    <StackPanel><TextBlock x:Name="StatusTitle" Text="{DynamicResource L016}" FontSize="13" FontWeight="SemiBold"/><TextBlock x:Name="StatusDetail" Text="{DynamicResource L017}" Foreground="{StaticResource Muted}" TextWrapping="Wrap" FontSize="12" Margin="0,5,0,0" LineHeight="18"/></StackPanel>
+   </Border>
+   <StackPanel Grid.Row="4" Margin="0,0,12,0">
+    <Grid>
+     <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="12"/><ColumnDefinition Width="150"/><ColumnDefinition Width="12"/><ColumnDefinition Width="112"/></Grid.ColumnDefinitions>
+     <Button x:Name="StartButton" Content="{DynamicResource L018}" Click="StartClick" Style="{StaticResource Btn}" Background="#A5EB83" Foreground="#192717" BorderBrush="#A5EB83" FontWeight="SemiBold" Height="48"/>
+     <Button x:Name="PauseButton" Grid.Column="2" Content="{DynamicResource L019}" Click="PauseClick" Style="{StaticResource Btn}" IsEnabled="False" Height="48"/>
+     <Button x:Name="RestoreButton" Grid.Column="4" Content="{DynamicResource L020}" Click="RestoreClick" Style="{StaticResource Btn}" Padding="10,12" Height="48"/>
+    </Grid>
+    <Grid Margin="0,14,0,0">
+     <CheckBox x:Name="AutoStart" Content="{DynamicResource L021}" FontSize="12" Foreground="{StaticResource Muted}" Checked="AutoChanged" Unchecked="AutoChanged" VerticalContentAlignment="Center"/>
+     <TextBlock Text="{DynamicResource L022}" FontSize="11" Foreground="{StaticResource Muted}" HorizontalAlignment="Right"/>
+    </Grid>
+   </StackPanel>
+  </Grid>
+ </Grid>
+</Window>

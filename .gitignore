@@ -1,0 +1,14 @@
+/work/
+/outputs/
+/artifacts/
+**/bin/
+**/obj/
+.vs/
+.idea/
+*.user
+*.suo
+*.pdb
+app.log*
+recovery.json
+settings.json
+*.tmp

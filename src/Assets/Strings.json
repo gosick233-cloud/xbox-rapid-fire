@@ -1,0 +1,490 @@
+{
+  "L000": {
+    "zh": "Xbox 连发助手",
+    "en": "Xbox Rapid Fire"
+  },
+  "L001": {
+    "zh": "XBOX 连发助手",
+    "en": "XBOX RAPID FIRE"
+  },
+  "L002": {
+    "zh": "正在检测手柄",
+    "en": "Detecting controller"
+  },
+  "L003": {
+    "zh": "当前配置",
+    "en": "CURRENT SETUP"
+  },
+  "L004": {
+    "zh": " / 8 个按键已启用",
+    "en": " / 8 buttons enabled"
+  },
+  "L005": {
+    "zh": "每个按键，独立选择模式",
+    "en": "Choose a mode for each button"
+  },
+  "L006": {
+    "zh": "连接环境",
+    "en": "CONNECTION"
+  },
+  "L007": {
+    "zh": "虚拟手柄驱动  ·  检测中",
+    "en": "Virtual controller  ·  Checking"
+  },
+  "L008": {
+    "zh": "防重复输入  ·  检测中",
+    "en": "Input isolation  ·  Checking"
+  },
+  "L009": {
+    "zh": "安装所需驱动",
+    "en": "Install drivers"
+  },
+  "L010": {
+    "zh": "按键连发",
+    "en": "Rapid fire"
+  },
+  "L011": {
+    "zh": "选好按键，调好节奏，然后进入游戏。",
+    "en": "Choose your buttons and timing, then launch your game."
+  },
+  "L012": {
+    "zh": "待启动",
+    "en": "Ready"
+  },
+  "L013": {
+    "zh": "30–5000 毫秒，按 Enter 应用",
+    "en": "30–5000 milliseconds. Press Enter to apply."
+  },
+  "L014": {
+    "zh": "连发周期 30–5000 ms · 按下与松开各占一半",
+    "en": "Cycle: 30–5000 ms · 50% pressed, 50% released"
+  },
+  "L015": {
+    "zh": "LT / RT 触发阈值约 12%",
+    "en": "LT / RT threshold: ~12%"
+  },
+  "L016": {
+    "zh": "准备好后，开始连发",
+    "en": "Ready when you are"
+  },
+  "L017": {
+    "zh": "先启动连发助手，再打开游戏。",
+    "en": "Start rapid fire before launching your game."
+  },
+  "L018": {
+    "zh": "开始连发",
+    "en": "Start rapid fire"
+  },
+  "L019": {
+    "zh": "暂停   F8",
+    "en": "Pause   F8"
+  },
+  "L020": {
+    "zh": "恢复手柄",
+    "en": "Restore"
+  },
+  "L021": {
+    "zh": "下次打开自动开始",
+    "en": "Start automatically next time"
+  },
+  "L022": {
+    "zh": "关闭到托盘 · 托盘右键退出",
+    "en": "Close to tray · Right-click tray to exit"
+  },
+  "L023": {
+    "zh": "未检测到 Xbox 手柄，请先连接手柄。",
+    "en": "No Xbox controller detected. Connect your controller first."
+  },
+  "L024": {
+    "zh": "请只连接一只 Xbox 手柄，并关闭其他虚拟手柄工具后重试。",
+    "en": "Connect only one Xbox controller and close other virtual controller tools, then try again."
+  },
+  "L025": {
+    "zh": "工具无法读取已隐藏的手柄，已恢复普通输入。",
+    "en": "The hidden controller could not be read. Normal input has been restored."
+  },
+  "L026": {
+    "zh": "未能区分实体手柄和虚拟手柄，已取消启动。",
+    "en": "The physical and virtual controllers could not be distinguished. Startup was canceled."
+  },
+  "L027": {
+    "zh": "手柄已断开，连发已停止。重新连接后点击“开始连发”。",
+    "en": "Controller disconnected. Reconnect it and click Start rapid fire."
+  },
+  "L028": {
+    "zh": "输入线程尚未停止，请稍后重试。",
+    "en": "The input thread is still stopping. Try again shortly."
+  },
+  "L029": {
+    "zh": "X 按键",
+    "en": "X button"
+  },
+  "L030": {
+    "zh": "Y 按键",
+    "en": "Y button"
+  },
+  "L031": {
+    "zh": "B 按键",
+    "en": "B button"
+  },
+  "L032": {
+    "zh": "A 按键",
+    "en": "A button"
+  },
+  "L033": {
+    "zh": "左肩键",
+    "en": "Left bumper"
+  },
+  "L034": {
+    "zh": "右肩键",
+    "en": "Right bumper"
+  },
+  "L035": {
+    "zh": "左扳机",
+    "en": "Left trigger"
+  },
+  "L036": {
+    "zh": "右扳机",
+    "en": "Right trigger"
+  },
+  "L037": {
+    "zh": "{0} 启用连发",
+    "en": "{0} enable rapid fire"
+  },
+  "L038": {
+    "zh": "{0} 连发周期毫秒，范围30到5000",
+    "en": "{0} cycle in milliseconds, from 30 to 5000"
+  },
+  "L039": {
+    "zh": "{0} 周期减10毫秒",
+    "en": "{0} decrease cycle by 10 milliseconds"
+  },
+  "L040": {
+    "zh": "{0} 周期加10毫秒",
+    "en": "{0} increase cycle by 10 milliseconds"
+  },
+  "L041": {
+    "zh": "{0} 当前{1}，点击切换为{2}",
+    "en": "{0} current mode: {1}. Click to switch to {2}."
+  },
+  "L042": {
+    "zh": "长按连发",
+    "en": "Hold"
+  },
+  "L043": {
+    "zh": "单击连发",
+    "en": "Toggle"
+  },
+  "L044": {
+    "zh": "按一下手柄按钮开始持续连发，再按一下停止。点击切换为长按连发。",
+    "en": "Press the controller button once to start, again to stop. Click here to switch to Hold mode."
+  },
+  "L045": {
+    "zh": "按住手柄按钮时连发，松开停止。点击切换为单击连发。",
+    "en": "Hold the controller button to repeat; release to stop. Click here to switch to Toggle mode."
+  },
+  "L046": {
+    "zh": "启用长按连发：按住连发，松开停止。",
+    "en": "Enable Hold mode: hold the controller button to repeat, release to stop."
+  },
+  "L047": {
+    "zh": "启用单击连发：按一次开始，再按一次停止。",
+    "en": "Enable Toggle mode: press the controller button once to start, again to stop."
+  },
+  "L048": {
+    "zh": "普通输入",
+    "en": "Normal input"
+  },
+  "L049": {
+    "zh": "请输入 30–5000 ms",
+    "en": "Enter 30–5000 ms"
+  },
+  "L050": {
+    "zh": "约 {0:0.#} 次 / 秒",
+    "en": "~{0:0.#} / sec"
+  },
+  "L051": {
+    "zh": "已启用",
+    "en": "Enabled"
+  },
+  "L052": {
+    "zh": "连发 · 再按停",
+    "en": "Firing · tap to stop"
+  },
+  "L053": {
+    "zh": "等待单击",
+    "en": "Waiting for tap"
+  },
+  "L054": {
+    "zh": "等待按下",
+    "en": "Waiting for press"
+  },
+  "L055": {
+    "zh": "连发 · 按下",
+    "en": "Firing · pressed"
+  },
+  "L056": {
+    "zh": "连发 · 间隔",
+    "en": "Firing · released"
+  },
+  "L057": {
+    "zh": "普通按住",
+    "en": "Normal hold"
+  },
+  "L058": {
+    "zh": "手柄设备已断开，请重新连接后重试。",
+    "en": "Controller disconnected. Reconnect it and try again."
+  },
+  "L059": {
+    "zh": "手柄接口路径长度异常。",
+    "en": "Invalid controller interface path length."
+  },
+  "L060": {
+    "zh": "未找到 Xbox 手柄，请重新连接手柄后重试。",
+    "en": "No Xbox controller found. Reconnect it and try again."
+  },
+  "L061": {
+    "zh": "检测到多只 Xbox 手柄，请只连接要连发的这一只。",
+    "en": "Multiple Xbox controllers detected. Connect only the controller you want to use."
+  },
+  "L062": {
+    "zh": "未找到安装包，请完整解压工具文件夹后再运行。",
+    "en": "Installer not found. Extract the complete tool folder and try again."
+  },
+  "L063": {
+    "zh": "无法启动驱动安装程序。",
+    "en": "Could not start the driver installer."
+  },
+  "L064": {
+    "zh": "安装未完成，返回码 ",
+    "en": "Installation incomplete. Exit code: "
+  },
+  "L065": {
+    "zh": "无法验证驱动签名。",
+    "en": "Could not verify the driver signature."
+  },
+  "L066": {
+    "zh": "驱动签名验证失败，未执行安装。",
+    "en": "Driver signature verification failed. Installation was not started. "
+  },
+  "L067": {
+    "zh": "HidHide 正被其他程序占用，请关闭 HidHide 配置窗口后重试。",
+    "en": "HidHide is in use. Close the HidHide configuration window and try again."
+  },
+  "L068": {
+    "zh": "无法连接 HidHide 驱动，请确认安装完成并按提示重启电脑。",
+    "en": "Could not connect to HidHide. Complete installation and restart Windows if prompted."
+  },
+  "L069": {
+    "zh": "HidHide 驱动操作失败",
+    "en": "HidHide driver operation failed"
+  },
+  "L070": {
+    "zh": "HidHide 返回了无效的 Unicode 数据长度。",
+    "en": "HidHide returned an invalid Unicode data length."
+  },
+  "L071": {
+    "zh": "HidHide 返回的数据长度异常。",
+    "en": "HidHide returned an invalid data length."
+  },
+  "L072": {
+    "zh": "HidHide 返回的状态长度异常。",
+    "en": "HidHide returned an invalid status length."
+  },
+  "L073": {
+    "zh": "HidHide 当前启用了反向名单模式。请先在 HidHide 中关闭反向模式，再使用本工具。",
+    "en": "HidHide inverse mode is enabled. Disable inverse mode in HidHide before using this tool."
+  },
+  "L074": {
+    "zh": "无法启动异常退出恢复进程。",
+    "en": "Could not start the crash recovery process."
+  },
+  "L075": {
+    "zh": "未能确认防重复输入设置，已取消启动。",
+    "en": "Input isolation could not be confirmed. Startup was canceled."
+  },
+  "L076": {
+    "zh": "恢复记录无法读取。",
+    "en": "Could not read the recovery record."
+  },
+  "L077": {
+    "zh": "手柄恢复尚未完成。请点击“恢复手柄”重试。",
+    "en": "Controller recovery is incomplete. Click Restore to try again."
+  },
+  "L078": {
+    "zh": "普通手柄输入模式尚未恢复，请点击“恢复手柄”重试。",
+    "en": "Normal controller input has not been restored. Click Restore to try again."
+  },
+  "L079": {
+    "zh": "临时应用名单尚未恢复，请点击“恢复手柄”重试。",
+    "en": "The temporary application list has not been restored. Click Restore to try again."
+  },
+  "L080": {
+    "zh": "打开窗口",
+    "en": "Open window"
+  },
+  "L081": {
+    "zh": "暂停 / 恢复连发",
+    "en": "Pause / Resume rapid fire"
+  },
+  "L082": {
+    "zh": "退出并恢复手柄",
+    "en": "Exit and restore controller"
+  },
+  "L083": {
+    "zh": "PULSE · Xbox 连发助手",
+    "en": "PULSE · Xbox Rapid Fire"
+  },
+  "L084": {
+    "zh": "暂停连发",
+    "en": "Pause"
+  },
+  "L085": {
+    "zh": "无法保存设置：",
+    "en": "Could not save settings: "
+  },
+  "L086": {
+    "zh": "正在处理，请稍候…",
+    "en": "Please wait…"
+  },
+  "L087": {
+    "zh": "处理中",
+    "en": "Working"
+  },
+  "L088": {
+    "zh": "请先修正卡片中标出的连发周期，范围为 30–5000 ms。",
+    "en": "Fix the highlighted cycle values first. Valid range: 30–5000 ms."
+  },
+  "L089": {
+    "zh": "请先打开至少一个按键卡片右上角的开关。",
+    "en": "Enable at least one button using its card switch."
+  },
+  "L090": {
+    "zh": "正在连接手柄",
+    "en": "Connecting controller"
+  },
+  "L091": {
+    "zh": "停止连发",
+    "en": "Stop rapid fire"
+  },
+  "L092": {
+    "zh": "虚拟手柄驱动未就绪。请安装左侧所需驱动，按提示重启电脑后再试。",
+    "en": "The virtual controller driver is not ready. Install the drivers on the left and restart Windows if prompted."
+  },
+  "L093": {
+    "zh": "正在恢复普通手柄输入",
+    "en": "Restoring normal controller input"
+  },
+  "L094": {
+    "zh": "正在恢复手柄",
+    "en": "Restoring controller"
+  },
+  "L095": {
+    "zh": "恢复手柄失败：",
+    "en": "Controller recovery failed: "
+  },
+  "L096": {
+    "zh": "继续   F8",
+    "en": "Resume   F8"
+  },
+  "L097": {
+    "zh": "继续连发",
+    "en": "Resume"
+  },
+  "L098": {
+    "zh": "需要处理",
+    "en": "Attention"
+  },
+  "L099": {
+    "zh": "暂时无法启动",
+    "en": "Unable to start"
+  },
+  "L100": {
+    "zh": "已连接 · Xbox 手柄",
+    "en": "Connected · Xbox controller"
+  },
+  "L101": {
+    "zh": "未连接 · 请连接手柄",
+    "en": "Not connected · Connect a controller"
+  },
+  "L102": {
+    "zh": "检测到多个手柄",
+    "en": "Multiple controllers detected"
+  },
+  "L103": {
+    "zh": "已暂停",
+    "en": "Paused"
+  },
+  "L104": {
+    "zh": "连发中",
+    "en": "Active"
+  },
+  "L105": {
+    "zh": "普通手柄输入 · 连发已暂停",
+    "en": "Normal input · Rapid fire paused"
+  },
+  "L106": {
+    "zh": "连发已就绪，按卡片模式操作",
+    "en": "Rapid fire ready · Use your selected modes"
+  },
+  "L107": {
+    "zh": "持续连发已清除。继续后，单击模式需再次按下开始。",
+    "en": "Toggle firing has been cleared. After resuming, press a button again to start."
+  },
+  "L108": {
+    "zh": "长按模式：松开停止。单击模式：按一次开始，再按一次停止。",
+    "en": "Hold: release to stop. Toggle: press once to start, again to stop."
+  },
+  "L109": {
+    "zh": "已连接 · 输入正常",
+    "en": "Connected · Input ready"
+  },
+  "L110": {
+    "zh": "虚拟手柄驱动  ·  ",
+    "en": "Virtual controller  ·  "
+  },
+  "L111": {
+    "zh": "已安装",
+    "en": "Installed"
+  },
+  "L112": {
+    "zh": "未安装",
+    "en": "Not installed"
+  },
+  "L113": {
+    "zh": "防重复输入  ·  ",
+    "en": "Input isolation  ·  "
+  },
+  "L114": {
+    "zh": "检查连接环境",
+    "en": "Check connection"
+  },
+  "L115": {
+    "zh": "请完成 Windows 驱动安装向导",
+    "en": "Complete the Windows driver installer"
+  },
+  "L116": {
+    "zh": "驱动安装完成。如果安装向导提示重启，请先重启电脑。",
+    "en": "Driver installation completed. Restart Windows if the installer requested it."
+  },
+  "L117": {
+    "zh": "请先恢复手柄再退出",
+    "en": "Restore the controller before exiting"
+  },
+  "L118": {
+    "zh": "Xbox 连发助手已经在运行，请从右下角托盘打开。",
+    "en": "Xbox Rapid Fire is already running. Open it from the system tray."
+  },
+  "L119": {
+    "zh": "连接期间检测到其他手柄，请只连接一只实体手柄后重试。",
+    "en": "Another controller was detected during connection. Connect only one physical controller and try again."
+  },
+  "L120": {
+    "zh": "虚拟手柄连接超时，请重启电脑后重试。",
+    "en": "Virtual controller connection timed out. Restart Windows and try again."
+  },
+  "L121": {
+    "zh": "长按：按住连发，松开停止。\n单击：按一次开始，再按停止。",
+    "en": "Hold: release to stop.\nToggle: press again to stop."
+  }
+}
